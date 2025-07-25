@@ -1,0 +1,15 @@
+# Entorno virtual
+env/
+
+# Archivos compilados y temporales
+*.pyc
+__pycache__/
+
+# Archivos estáticos generados
+staticfiles/
+
+# Base de datos local (si usas SQLite en dev)
+db.sqlite3
+
+# Variables sensibles
+.env

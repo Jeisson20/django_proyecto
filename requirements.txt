@@ -1,0 +1,11 @@
+Django>=5.2
+gunicorn
+whitenoise
+psycopg2-binary
+social-auth-app-django
+requests
+django-jazzmin
+django-debug-toolbar
+python-dotenv
+django-ckeditor
+djangorestframework
