@@ -177,11 +177,12 @@
       <div class="sidebar">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="{% static 'mi_app/dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
-          </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            {% if user.is_authenticated %}
+            <a href="#" class="d-block">{{ user.get_username }}</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="d-block">Login</a>
+            {% endif %}
           </div>
         </div>
 

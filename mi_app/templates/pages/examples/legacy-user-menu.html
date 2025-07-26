@@ -32,10 +32,14 @@
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
         </li>
-        <form method="POST" action="{% url 'logout' %}">
-          {% csrf_token %}
-          <button type="submit" class="nav-link btn btn-link" style="padding: 0;">Log Out</button>
-        </form>
+        <div class="info">
+          {% if user.is_authenticated %}
+          <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="nav-link btn btn-link" style="padding: 0;">Log Out</button>
+          </form>
+          {% endif %}
+        </div>
       </ul>
 
       <!-- Right navbar links -->

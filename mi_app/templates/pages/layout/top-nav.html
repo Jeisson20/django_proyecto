@@ -46,10 +46,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="nav-item">
               <a href="#" class="nav-link">Contact</a>
             </li>
-            <form method="POST" action="{% url 'logout' %}">
-              {% csrf_token %}
-              <button type="submit" class="nav-link btn btn-link" style="padding: 0;">Log Out</button>
-            </form>
+            <div class="info">
+              {% if user.is_authenticated %}
+              <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="nav-link btn btn-link" style="padding: 0;">Log Out</button>
+              </form>
+              {% endif %}
+            </div>
             <li class="nav-item dropdown">
               <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link dropdown-toggle">Dropdown</a>
